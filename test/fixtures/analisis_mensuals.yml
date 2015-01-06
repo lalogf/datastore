@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hto: 1
+  hb: 1
+  peso_pre: 1
+  peso_post: 1
+  urea_pre: 1
+  urea_post: 1
+  urr: 1
+  ktv: 1
+  tgp: 1
+  tgo: 1
+  month: MyString
+
+two:
+  hto: 1
+  hb: 1
+  peso_pre: 1
+  peso_post: 1
+  urea_pre: 1
+  urea_post: 1
+  urr: 1
+  ktv: 1
+  tgp: 1
+  tgo: 1
+  month: MyString

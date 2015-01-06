@@ -1,0 +1,78 @@
+<!-- <div class="container">
+	<div class="row" >
+		<div class="col-md-6">
+			<form role="form">
+				<div class="form-group">
+					<label>Primer Nombre</label>
+					<input type="text" Placeholder="Primer Nombre">
+				</div>
+				<div class="form-group">
+					<label>Segundo Nombre</label>
+					<input type="text" Placeholder="Segundo Nombre">
+				</div>
+				<div class="form-group">
+					<label>Apellido Paterno</label>
+					<input type="text" Placeholder="Apellid Paterno">
+				</div>
+				<div class="form-group">
+					<label>Apellido Materno</label>
+					<input type="text" Placeholder="Apellid Paterno">
+				</div>
+				<div class="form-group">
+					<label>Fecha de Nacimiento</label>
+					<input type="date">
+				</div>
+				<div class="form-group">
+					<label>DNI</label>
+					<input type="text" Placeholder="12345678">
+				</div>
+				<input type="button" class="btn btn-success" value="Guardar">
+			</form>
+		</div>
+	</div>
+</div>
+-->
+
+<div class="container"> 
+	<div class = "row">
+
+		<div class="col-md-12">
+
+			<%= bootstrap_form_for @paciente do |f| %>
+			<div class="col-md-6">
+				<%= f.text_field(:primer_nombre, placeholder: "Primer Nombre") %>
+			</div>
+			<div class="col-md-6">
+				<%= f.text_field(:segundo_nombre, placeholder: "Segundo Nombre") %>
+			</div>
+			<div class="col-md-6">
+				<%= f.text_field(:apellido_paterno, placeholder: "Apellido Paterno") %>
+			</div>
+			<div class="col-md-6">
+				<%= f.text_field(:apellido_materno, placeholder: "Apellido Materno") %>
+			</div>
+			<div class="col-md-6">
+				<%= f.date_select(:nacimiento, value: Date.today, order: [:day, :month, :year], use_month_names: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'], :start_year => 1910, :end_year => 2015, class: "blue" ) %>
+			</div> 
+			<div class="col-md-6">
+				<%= f.text_field(:dni, label:"DNI", placeholder:"12345678")%>
+			</div>
+			<div class="col-md-12">
+				<%= f.text_field(:direccion, placeholder: "Calle San Martin 123 Int B")%>
+			</div>
+			<div class="col-md-4">
+				<%= f.text_field(:distrito, placeholder:"Chiclayo")%>
+			</div>
+			<div class="col-md-4">
+				<%= f.text_field(:provincia, placeholder:"Chiclayo")%>
+			</div>
+			<div class="col-md-4">
+				<%= f.text_field(:departamento, placeholder:"Lambayeque")%>
+			</div>
+			<div class="col-md-12">
+				<%= f.submit  "Guardar", class: "btn btn-success" %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
