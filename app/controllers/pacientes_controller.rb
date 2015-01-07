@@ -1,10 +1,14 @@
 class PacientesController < ApplicationController
+
+	before_action :set_paciente, only: [:show, :edit, :update, :destroy]
+
 	def index
-		@pacientes = Paciente.all
+		@q = Paciente.search(params[:q])
+		@pacientes = @q.result.paginate(:page => params[:page], :per_page => 2).order('apellido_paterno ASC')
+
 	end
 	
 	def show
-		
 	end
 	
 	def new
@@ -12,12 +16,35 @@ class PacientesController < ApplicationController
 	end
 	
 	def create
-		Paciente.create(paciente_params)
-		redirect_to root_path		
+		@paciente = Paciente.create(paciente_params)
+		if @paciente.save
+			flash[:success] = "You have create an account!"
+			redirect_to root_path
+		else
+			render new_paciente_path
+		end
+
+	end
+
+	def edit
+	end
+
+	def update
+		@paciente.update(paciente_params)
+		redirect_to paciente_path(params[:id])
+		
+	end
+
+	def destroy
+		@paciente.destroy
+		redirect_to root_path
 	end
 
 	private
 	def paciente_params
 		params.require(:paciente).permit(:primer_nombre,:segundo_nombre,:apellido_paterno,:apellido_materno,:nacimiento, :dni, :direccion, :distrito, :provincia, :departamento)	
+	end
+	def set_paciente
+		@paciente = Paciente.find(params[:id])
 	end
 end

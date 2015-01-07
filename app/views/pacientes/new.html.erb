@@ -1,44 +1,15 @@
-<!-- <div class="container">
-	<div class="row" >
-		<div class="col-md-6">
-			<form role="form">
-				<div class="form-group">
-					<label>Primer Nombre</label>
-					<input type="text" Placeholder="Primer Nombre">
-				</div>
-				<div class="form-group">
-					<label>Segundo Nombre</label>
-					<input type="text" Placeholder="Segundo Nombre">
-				</div>
-				<div class="form-group">
-					<label>Apellido Paterno</label>
-					<input type="text" Placeholder="Apellid Paterno">
-				</div>
-				<div class="form-group">
-					<label>Apellido Materno</label>
-					<input type="text" Placeholder="Apellid Paterno">
-				</div>
-				<div class="form-group">
-					<label>Fecha de Nacimiento</label>
-					<input type="date">
-				</div>
-				<div class="form-group">
-					<label>DNI</label>
-					<input type="text" Placeholder="12345678">
-				</div>
-				<input type="button" class="btn btn-success" value="Guardar">
-			</form>
-		</div>
-	</div>
-</div>
--->
 
 <div class="container"> 
-	<div class = "row">
 
+
+
+
+	<div class = "row">
 		<div class="col-md-12">
 
 			<%= bootstrap_form_for @paciente do |f| %>
+			<%= f.alert_message "Please fix the errors below." %>
+
 			<div class="col-md-6">
 				<%= f.text_field(:primer_nombre, placeholder: "Primer Nombre") %>
 			</div>

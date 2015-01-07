@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<div class="caption">
+					<p><b> Nombres: </b> <%= @paciente.primer_nombre %> <%= @paciente.segundo_nombre %></p>
+					<p><b> Apellidos: </b> <%= @paciente.apellido_paterno %> <%= @paciente.apellido_materno %></p>
+					<p><b>DNI: </b> <%= @paciente.dni %> </p>
+					<% d = Date.parse(@paciente.nacimiento.to_s) %>
+					<p><b>Fecha de Nacimiento: </b> <%= d.day %>/<%= d.month %>/<%= d.year %> </p>
+					<p><a href="/pacientes/<%=@paciente.id%>/edit" class="btn btn-warning" role="button">Editar</a>
+						<a href="/pacientes/<%=@paciente.id%>/analisis_mensuales/new" class="btn btn-success" role="button">Nuevo análisis</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

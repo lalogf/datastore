@@ -31,6 +31,12 @@ gem 'hirb'
 gem 'bootstrap_form'
 
 gem 'bootstrap-datetimepicker-rails'
+
+gem 'will_paginate'
+
+gem 'will_paginate-bootstrap'
+
+gem 'ransack'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

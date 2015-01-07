@@ -12,7 +12,7 @@ class AnalisisMensualesController < ApplicationController
 	end
 
 	def create
-		
+		@am = AnalisisMensual.create(am_params).join(params[:id])
 	end
 
 	def edit
@@ -28,7 +28,8 @@ class AnalisisMensualesController < ApplicationController
 
 	private
 	def am_params
-		params.require(:analisismensual)
+		params.require(:analisismensual).permit(:hto, :hb, :peso_pre, :peso_post, :urea_pre, :urea_post, :urr, :ktv, :tgp, :tgo, :month)		
 	end
+
 
 end
