@@ -12,7 +12,7 @@ class AnalisisMensualesController < ApplicationController
 	end
 
 	def create
-		@am = AnalisisMensual.create(am_params).join(params[:id])
+		@am = AnalisisMensual.create(am_params).merge(paciente_id: params[:paciente_id]))
 	end
 
 	def edit

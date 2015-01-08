@@ -11,6 +11,7 @@ class CreatePacientes < ActiveRecord::Migration
       t.string :distrito
       t.string :provincia
       t.string :departamento
+      t.string :email
 
       t.timestamps
     end

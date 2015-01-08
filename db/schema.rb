@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20141230053701) do
     t.integer  "tgp"
     t.integer  "tgo"
     t.string   "month"
+    t.integer  "paciente_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20141230053701) do
     t.string   "distrito"
     t.string   "provincia"
     t.string   "departamento"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

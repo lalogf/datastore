@@ -42,7 +42,7 @@ class PacientesController < ApplicationController
 
 	private
 	def paciente_params
-		params.require(:paciente).permit(:primer_nombre,:segundo_nombre,:apellido_paterno,:apellido_materno,:nacimiento, :dni, :direccion, :distrito, :provincia, :departamento)	
+		params.require(:paciente).permit(:primer_nombre,:segundo_nombre,:apellido_paterno,:apellido_materno,:nacimiento, :dni, :direccion, :distrito, :provincia, :departamento, :email)	
 	end
 	def set_paciente
 		@paciente = Paciente.find(params[:id])
