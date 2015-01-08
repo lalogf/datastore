@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20141230053701) do
     t.integer  "ktv"
     t.integer  "tgp"
     t.integer  "tgo"
-    t.string   "month"
+    t.date     "fecha"
     t.integer  "paciente_id"
     t.datetime "created_at"
     t.datetime "updated_at"

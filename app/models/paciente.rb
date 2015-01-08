@@ -1,6 +1,6 @@
 class Paciente < ActiveRecord::Base
 
-	has_many :analisismensuales
+	has_many :analisismensuals
 
 	validates :primer_nombre, 
 		presence: { message: "Nombre inválido"}
@@ -13,9 +13,10 @@ class Paciente < ActiveRecord::Base
 		uniqueness: { case_sensitive: true }, 
 		length: {is: 8, message: "Debe tener 8 digitos"} 
 	validates :email,
-		confirmation: {message: "El email no coincide"},
+		confirmation: true,
 		format: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email_confirmation, 
-		presence: {message: "Por favor confirmar el email"}, if: "email?"	
+		presence: true,
+		confirmation: {message: "El email no coincide"}
 		
 end

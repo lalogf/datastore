@@ -25,7 +25,7 @@
 				<%= f.text_field(:apellido_materno, placeholder: "Apellido Materno") %>
 			</div>
 			<div class="col-md-6">
-				<%= f.date_select(:nacimiento, value: Date.today, order: [:day, :month, :year], use_month_names: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'], :start_year => 1910, :end_year => 2015, class: "blue" ) %>
+				<%= f.date_select(:nacimiento, value: Date.today, order: [:day, :month, :year], use_month_names: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'], :start_year => 1910, :end_year => 2015 ) %>
 			</div> 
 			<div class="col-md-6">
 				<%= f.text_field(:dni, label:"DNI", placeholder:"12345678")%>

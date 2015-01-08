@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'pacientes#index'
 
   resources :pacientes do
-    resources :analisis_mensuales
+    resources :analisis_mensuals
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

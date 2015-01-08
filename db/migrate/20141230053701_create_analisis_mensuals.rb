@@ -11,7 +11,7 @@ class CreateAnalisisMensuals < ActiveRecord::Migration
       t.integer :ktv
       t.integer :tgp
       t.integer :tgo
-      t.string :month
+      t.date :fecha
       t.references :paciente
 
       t.timestamps

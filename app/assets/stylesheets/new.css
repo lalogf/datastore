@@ -4,3 +4,10 @@
 	float: left;
 	margin-bottom: 10px;
 }
+
+#analisis_mensual_fecha_1i, #analisis_mensual_fecha_2i {
+	width: 45%;
+	margin-right: 10px;
+	float: left;
+	margin-bottom: 10px;
+}
