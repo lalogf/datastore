@@ -24,11 +24,11 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: 'irinon.com',
+    domain: ENV["domain_name"],
     authentication: "login",
     enable_starttls_auto: true,
-    user_name: 'lalo@irinon.com',
-    password: 'cedima99',
+    user_name: ENV["user_name"],
+    password: ENV["password_dev"],
 
   }
 

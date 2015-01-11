@@ -1,5 +1,12 @@
 class Paciente < ActiveRecord::Base
 
+	extend FriendlyId
+	friendly_id :full_name, use: :slugged
+
+	def full_name
+		"#{primer_nombre} #{apellido_paterno}"
+	end
+
 	has_many :analisismensuals
 
 	validates :primer_nombre, 

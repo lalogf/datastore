@@ -40,6 +40,10 @@ gem 'ransack'
 
 gem 'devise'
 
+gem 'friendly_id'
+
+gem "figaro"
+
 group :development do
   gem "better_errors"
 end

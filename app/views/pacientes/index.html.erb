@@ -37,7 +37,8 @@
 						<% d = Date.parse(pac.nacimiento.to_s) %>
 						<td><%= d.day %>/<%= d.month %>/<%= d.year%> </td>
 						<td><%= pac.dni%></td>
-						<td><a href="/pacientes/<%=pac.id%>">Ver</a></td>
+						
+						<td><%= link_to "ver", "pacientes/" + pac.slug %></td>
 					</tr>
 					<%end%>
 				</tbody>

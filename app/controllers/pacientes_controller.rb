@@ -5,7 +5,7 @@ class PacientesController < ApplicationController
 
 	def index
 		@q = Paciente.search(params[:q])
-		@pacientes = @q.result.paginate(:page => params[:page], :per_page => 2).order('apellido_paterno ASC')
+		@pacientes = @q.result.paginate(:page => params[:page], :per_page => 5).order('apellido_paterno ASC')
 
 	end
 	
@@ -46,6 +46,6 @@ class PacientesController < ApplicationController
 		params.require(:paciente).permit(:primer_nombre,:segundo_nombre,:apellido_paterno,:apellido_materno,:nacimiento, :dni, :direccion, :distrito, :provincia, :departamento, :email, :email_confirmation)	
 	end
 	def set_paciente
-		@paciente = Paciente.find(params[:id])
+		@paciente = Paciente.friendly.find(params[:id])
 	end
 end

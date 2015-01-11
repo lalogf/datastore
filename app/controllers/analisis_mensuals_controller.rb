@@ -1,5 +1,6 @@
 class AnalisisMensualsController < ApplicationController
 	before_filter :set_paciente, only:[:new, :edit]	
+	before_action :authenticate_user!
 	
 	
 	def index
