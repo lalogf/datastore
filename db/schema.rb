@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20150111061555) do
   enable_extension "plpgsql"
 
   create_table "analisis_mensuals", force: true do |t|
-    t.integer  "hto"
-    t.integer  "hb"
+    t.decimal  "hto"
+    t.decimal  "hb"
     t.integer  "peso_pre"
     t.integer  "peso_post"
     t.integer  "urea_pre"

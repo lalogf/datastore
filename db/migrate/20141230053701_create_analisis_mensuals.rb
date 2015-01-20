@@ -1,8 +1,8 @@
 class CreateAnalisisMensuals < ActiveRecord::Migration
   def change
     create_table :analisis_mensuals do |t|
-      t.integer :hto
-      t.integer :hb
+      t.decimal :hto
+      t.decimal :hb
       t.integer :peso_pre
       t.integer :peso_post
       t.integer :urea_pre

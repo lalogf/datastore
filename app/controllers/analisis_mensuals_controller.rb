@@ -1,6 +1,6 @@
 class AnalisisMensualsController < ApplicationController
 	before_filter :set_paciente, only:[:new, :edit]	
-	before_action :authenticate_user!
+	before_action :authenticate_user!, except:[:index, :show] 
 	
 	
 	def index
@@ -15,12 +15,10 @@ class AnalisisMensualsController < ApplicationController
 	end
 
 	def create
-		# 		Product.create(model: params[:model], case_image: new_file, user_id: params[:user_id])
-		# redirect_to "/users/"+ params[:user_id] + "/preview"
-
-		@analisis = AnalisisMensual.create(am_params.merge(paciente_id: params[:paciente_id]))
+		paciente = Paciente.friendly.find(params[:paciente_id])
+		@analisis = AnalisisMensual.create(am_params.merge(paciente_id: paciente.id))
 		
-		# @analisis = AnalisisMensual.create(hto: params[:hto], paciente_id: params[:paciente_id])		
+		
 		if @analisis.save
 			redirect_to paciente_analisis_mensuals_path
 		else
@@ -41,9 +39,12 @@ class AnalisisMensualsController < ApplicationController
 
 	private
 	def am_params
-		params.require(:analisis_mensual).permit(:fecha, :hto, :peso_pre, :peso_post, :urea_pre, :urea_post, :tgp, :tgo)		
+		params.require(:analisis_mensual).permit(:fecha, :hb,:hto, :peso_pre, :peso_post, :urea_pre, :urea_post, :tgp, :tgo)		
 	end
 	def set_paciente
 		@paciente = Paciente.find(params[:paciente_id])
 	end
+	# def hb_from_hto
+	# 	params[:hb] = params[:hto].to_i / 3.0
+	# end
 end

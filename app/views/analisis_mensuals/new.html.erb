@@ -9,7 +9,11 @@
 				<%= f.date_select(:fecha, value: Date.today, discard_day: true, order: [:month, :year], use_month_names:['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'], :start_year => 2014, :end_year => Date.today.year) %>
 			</div>
 			<div class="col-md-6">
-				<%= f.number_field(:hto, placeholder: "30", label: "Hematocrito") %>
+				<%= f.text_field(:hto, placeholder: "30", label: "Hematocrito") %>
+			</div>
+		
+			<div class="col-md-6">
+				<%= f.text_field(:hb, label: "Hemoglobina", :readonly => true) %>
 			</div>
 			<div class="col-md-6">
 				<%= f.text_field(:peso_pre, placeholder: "10") %>
