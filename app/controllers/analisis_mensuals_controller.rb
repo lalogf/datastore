@@ -22,7 +22,7 @@ class AnalisisMensualsController < ApplicationController
 		if @analisis.save
 			redirect_to paciente_analisis_mensuals_path
 		else
-			render new_paciente_analisis_mensual_path
+			render new_paciente_analisis_mensual_path(paciente.id)
 		end
 	end
 
@@ -39,7 +39,7 @@ class AnalisisMensualsController < ApplicationController
 
 	private
 	def am_params
-		params.require(:analisis_mensual).permit(:fecha, :hb,:hto, :peso_pre, :peso_post, :urea_pre, :urea_post, :tgp, :tgo)		
+		params.require(:analisis_mensual).permit(:fecha, :hb,:hto, :peso_pre, :peso_post, :urea_pre, :urea_post, :tgp, :tgo, :urr, :ktv)		
 	end
 	def set_paciente
 		@paciente = Paciente.find(params[:paciente_id])
