@@ -10,6 +10,7 @@ class PacientesController < ApplicationController
 	end
 	
 	def show
+		@analisis = AnalisisMensual.where(paciente_id: @paciente.id).order('fecha DESC')
 	end
 	
 	def new

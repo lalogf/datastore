@@ -20,9 +20,9 @@ class AnalisisMensualsController < ApplicationController
 		
 		
 		if @analisis.save
-			redirect_to paciente_analisis_mensuals_path
+			redirect_to paciente_path(paciente.id)
 		else
-			render new_paciente_analisis_mensual_path(paciente.id)
+			render new_paciente_analisis_mensual_path(paciente.slug)
 		end
 	end
 
@@ -42,7 +42,7 @@ class AnalisisMensualsController < ApplicationController
 		params.require(:analisis_mensual).permit(:fecha, :hb,:hto, :peso_pre, :peso_post, :urea_pre, :urea_post, :tgp, :tgo, :urr, :ktv)		
 	end
 	def set_paciente
-		@paciente = Paciente.find(params[:paciente_id])
+		@paciente = Paciente.friendly.find(params[:paciente_id])
 	end
 	# def hb_from_hto
 	# 	params[:hb] = params[:hto].to_i / 3.0

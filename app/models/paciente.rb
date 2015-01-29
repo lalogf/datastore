@@ -20,10 +20,6 @@ class Paciente < ActiveRecord::Base
 		uniqueness: { case_sensitive: true }, 
 		length: {is: 8, message: "Debe tener 8 digitos"} 
 	validates :email,
-		confirmation: true,
 		format: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	validates :email_confirmation, 
-		presence: true,
-		confirmation: {message: "El email no coincide"}
 		
 end
