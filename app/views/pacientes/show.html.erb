@@ -11,8 +11,8 @@
 					<p><b>Fecha de Nacimiento: </b> <%= d.day %>/<%= d.month %>/<%= d.year %> </p>
 					<p><b>Email: </b> <%= @paciente.email %></p>
 					<p><a href="/pacientes/<%=@paciente.id%>/edit" class="btn btn-warning" role="button">Editar</a>
-						<a href="/pacientes/<%=@paciente.slug%>/analisis_mensuals/new" class="btn btn-success" role="button">Nuevo análisis</a>
-					<%= link_to "Nuevo",new_paciente_analisis_mensual_path(@paciente.slug), class: "btn btn-success" %>
+					<%= link_to "Editar",edit_paciente_analisis_mensual_path(@paciente.slug), class: "btn btn-warning" %>	
+					<%= link_to "Nuevo Análisis",new_paciente_analisis_mensual_path(@paciente.slug), class: "btn btn-success" %>
 				</p>
 
 					</div>

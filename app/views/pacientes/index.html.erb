@@ -37,8 +37,7 @@
 						<% d = Date.parse(pac.nacimiento.to_s) %>
 						<td><%= d.day %>/<%= d.month %>/<%= d.year%> </td>
 						<td><%= pac.dni%></td>
-						
-						<td><%= link_to "ver", "pacientes/" + pac.slug %></td>
+						<td><%= link_to "ver",  new_paciente_analisis_mensual_path(pac.slug) %></td>
 					</tr>
 					<%end%>
 				</tbody>

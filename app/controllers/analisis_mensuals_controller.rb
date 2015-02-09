@@ -1,5 +1,5 @@
 class AnalisisMensualsController < ApplicationController
-	before_filter :set_paciente, only:[:new, :edit]	
+	before_filter :set_paciente, only:[:new, :create, :edit]	
 	before_action :authenticate_user!, except:[:index, :show] 
 	
 	
@@ -15,14 +15,15 @@ class AnalisisMensualsController < ApplicationController
 	end
 
 	def create
-		paciente = Paciente.friendly.find(params[:paciente_id])
-		@analisis = AnalisisMensual.create(am_params.merge(paciente_id: paciente.id))
+		paci = Paciente.friendly.find(params[:paciente_id])
+		@analisis = AnalisisMensual.create(am_params.merge(paciente_id: paci.id))
 		
 		
 		if @analisis.save
-			redirect_to paciente_path(paciente.id)
+			flash[:notice] = "Análisis creado exitosamente"
+			redirect_to paciente_path(paci.slug)
 		else
-			render new_paciente_analisis_mensual_path(paciente.slug)
+			render new_paciente_analisis_mensual_path(paci.slug)
 		end
 	end
 
@@ -44,7 +45,4 @@ class AnalisisMensualsController < ApplicationController
 	def set_paciente
 		@paciente = Paciente.friendly.find(params[:paciente_id])
 	end
-	# def hb_from_hto
-	# 	params[:hb] = params[:hto].to_i / 3.0
-	# end
 end
